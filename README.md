@@ -53,9 +53,7 @@ docker build -t fraud_detector .
 ```
 3. Запустите контейнер с монтированием томов
 ```bash
-docker run -it --rm -v ./input:/app/input \
-                    -v ./output:/app/output \
-                    fraud_detector
+docker run -it --rm -v "${PWD}/input:/app/input" -v "${PWD}/output:/app/output" fraud_detector
 ```
 4. После запуска сервиса (появления в логах сообщения: `__main__ - INFO - File observer started`) можно приступать к скорингу данных:
  - Разместите файл формата test.csv из соревнования https://www.kaggle.com/competitions/teta-ml-1-2025 в директории `./input`
